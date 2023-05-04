@@ -1,0 +1,14 @@
+<div [formGroup]="form">
+    <label>{{question.label}}</label>
+
+    <div [ngSwitch]="question.controlType">
+
+        <mat-form-field class="example-full-width">
+            <mat-label [attr.for]="question.key">{{question.label}}</mat-label>
+            <input *ngSwitchCase="'textbox'" matInput placeholder="Ex. Pizza" [formControlName]="question.key"
+                [class]="question.class" [id]="question.key">
+        </mat-form-field>
+
+    </div>
+
+</div>

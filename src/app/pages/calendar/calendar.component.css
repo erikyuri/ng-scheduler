@@ -1,0 +1,13 @@
+.card-props {
+    padding: 10px 15px;
+    box-shadow: 15px 15px 8px -6px rgba(204, 196, 204, 0.76);
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+}
+
+.card-content {
+    margin-top: 15px;
+}

@@ -1,0 +1,36 @@
+<div class="row space-around header-wrapper">
+    <div class="grid-wrapper">
+        <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" value="today">
+            <mat-button-toggle [view]="view" mwlCalendarPreviousView [(viewDate)]="viewDate"
+                (viewDateChange)="closeOpenMonthViewDay()" value="previous">Anterior</mat-button-toggle>
+            <mat-button-toggle mwlCalendarToday [(viewDate)]="viewDate" value="today">Hoje</mat-button-toggle>
+            <mat-button-toggle [view]="view" mwlCalendarNextView [(viewDate)]="viewDate"
+                (viewDateChange)="closeOpenMonthViewDay()" value="next">Próximo</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div class="grid-wrapper">
+        <h3>{{ viewDate | calendarDate:(view +'ViewTitle'):'en' }}</h3>
+    </div>
+    <div class="grid-wrapper">
+        <span style="visibility: hidden;">
+            hidden space aa
+        </span>
+    </div>
+</div>
+<br />
+<div>
+    <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+        [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+        (eventClicked)="handleEvent('Clicked', $event.event, null)" (eventTimesChanged)="eventTimesChanged($event)">
+    </mwl-calendar-month-view>
+</div>
+
+<ng-template #userDialogTemplate>
+    <div class="edit-modal">
+        <form [formGroup]="form">
+
+            
+
+        </form>
+    </div>
+</ng-template>
